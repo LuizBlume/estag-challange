@@ -1,30 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POO</title>
+</head>
+<body>
+    <?php
+        require_once 'caneta.php';
+        $c1 = new Caneta;
+        $c1->cor = "Azul";
+        $c1->ponta = 0.5;
+        $c1->destampar();
+        $c1->rabiscar();
+        print_r($c1);
 
-<?php
-error_log('Sou um log');
-echo "Olá mundo";
-
-
-$host = "pgsql_desafio";
-$db = "applicationphp";
-$user = "root";
-$pw = "root";
-
-$myPDO = new PDO("pgsql:host=$host;dbname=$db", $user, $pw);
-
-// exemplo de insert
-$statement = $myPDO->prepare("INSERT INTO mytable (DESCRIPTION) VALUES ('TEST PHP')");
-$statement->execute();
-
-// exemplo de fetch
-$statement1 = $myPDO->query("SELECT * FROM mytable");
-$data = $statement1->fetch();
-
-echo "<br>";
-print_r($data);
-
-// exemplo de fetch2
-$statement2 = $myPDO->query("SELECT * FROM mytable");
-$data2 = $statement2->fetchALL();
-
-echo "<br>";
-print_r($data2);
+        $c2 = new Caneta;
+        $c2->cor = "verde";
+        $c2->carga = 50;
+        $c2->tampar();
+        print_r($c2);
+    ?>
+</body>
+</html>

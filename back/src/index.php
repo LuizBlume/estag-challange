@@ -8,19 +8,25 @@
 <body>
     <pre>
         <?php
-            require_once 'caneta.php';
-            $c1 = new Caneta;
-            $c1->cor = "Azul";
-            // $c1->ponta = 0.5;
-            // $c1->destampar();
-            $c1->rabiscar();
-            print_r($c1);
-
-            $c2 = new Caneta;
-            $c2->cor = "verde";
-            // $c2->carga = 50;
-            $c2->tampar();
-            print_r($c2);
+            require_once 'contaBanco.php';
+            $p1 = new Bank();
+            $p2 = new Bank();
+            $p1->abrirConta("CC");
+            $p1->setNumConta(11111);
+            $p1->setDono("Jubileu");
+            $p2->abrirConta("CP");
+            $p2->setNumConta(2222);
+            $p2->setDono("Creuza");
+            $p1->depositar(300);
+            $p2->depositar(500);
+            $p1->pagarMensal();
+            $p2->pagarMensal();
+            $p1->sacar(338);
+            $p2->sacar(630);
+            $p1->fecharConta();
+            $p2->fecharConta();
+            print_r($p1);
+            print_r($p2);
         ?>
 </body>
 </pre>

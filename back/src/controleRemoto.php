@@ -6,9 +6,9 @@ class ControleRemoto implements controlador {
     private $tocando;
 
     function __construct() {
-        $this->volume = 50,
+        $this->volume = 50;
         $this->ligado = false;
-        $this->tocando = f
+        $this->tocando = false;
     }
     private function getVolume() {
         return $this->volume;
@@ -29,10 +29,10 @@ class ControleRemoto implements controlador {
         $this->tocando = $tocando;
     }
     public function abrirMenu() {
-        echo "<br>Está ligado?: " . ($this->getLigado())?"SIM":"NÃO";
-        echo "<br>Está tocando?: " . ($this->getTocando())?"SIM":"NÃO";
+        echo "<br>Está ligado?: " . ($this->getLigado() ? "SIM" : "NÃO");
+        echo "<br>Está tocando?: " . ($this->getTocando() ? "SIM" : "NÃO");
         echo "<br>Volume: " . $this->getVolume();
-        for($i = 0; $i <= $this->getVolume(); $i += 10) {
+        for($i = 1; $i <= $this->getVolume(); $i += 10) {
             echo "|";
         }
         echo "<br>";
@@ -46,14 +46,18 @@ class ControleRemoto implements controlador {
     public function desligar() {
         $this->setLigado(FALSE);
     }
-    public function desligarMudo() {
-        
-    }
     public function ligarMudo() {
-
+        if ($this->getLigado() && $this->getVolume() > 0) {
+            $this->setVolume(0);
+        }
+    }
+    public function desligarMudo() {
+        if ($this->getLigado() && $this->getVolume() == 0) {
+            $this->setVolume(50);
+        }
     }
     public function maisVolume() {
-        if ($this->getLigado()) {
+        if ($this->getLigado() && $this->getVolume() < 100) {
             $this->setVolume($this->getVolume() + 5);
         }
     }
@@ -62,11 +66,15 @@ class ControleRemoto implements controlador {
             $this->setVolume($this->getVolume() - 5);
         }
     }
-    public function pause() {
-
-    }
     public function play() {
-
+        if ($this->getLigado() && !($this->getTocando())) {
+            $this->setTocando(true);
+        }
+    }
+    public function pause() {
+        if ($this->getLigado() && $this->getTocando()) {
+            $this->setTocando(false);
+        }
     }
 }
 ?>

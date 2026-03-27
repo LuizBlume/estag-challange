@@ -8,7 +8,7 @@
 <body>
     <pre>
         <?php
-            require_once 'contaBanco.php';
+            /* require_once 'contaBanco.php';
             $p1 = new Bank();
             $p2 = new Bank();
             $p3 = new Bank();
@@ -36,6 +36,13 @@
             print_r($p1);
             print_r($p2);
             print_r($p3);
+            */
+            require_once 'controleRemoto.php';
+            $c = new ControleRemoto();
+            $c->ligar();
+            $c->maisVolume();
+            $c->maisVolume();
+            $c->abrirMenu();
         ?>
 </body>
 </pre>

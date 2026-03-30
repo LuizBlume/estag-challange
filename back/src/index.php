@@ -61,7 +61,7 @@
             // foreach ($l as $lutador) {
             //     $lutador->status();
             // }
-
+            /*
             require_once "pessoa.php";
             require_once "aluno.php";
             require_once "professor.php";
@@ -89,6 +89,32 @@
             print_r($p2);
             print_r($p3);
             print_r($p4);
+            */
+            // require_once "herancaAvancado/pessoa.php";
+            require_once "herancaAvancado/aluno.php";
+            require_once "herancaAvancado/bolsista.php";
+            // $v1 = new Visitante();
+            // $v1->setNome("Osvaldo");
+            // $v1->setIdade(29);
+            // $v1->setSexo("M");
+            $a1 = new Aluno();
+            $a1->setNome("Pedro");
+            $a1->setMatr(1111);
+            $a1->setIdade(16);
+            $a1->setSexo("M");
+            $a1->setCurso("Informática");
+            $a1->pagarMensalidade();
+            print_r($a1);
+
+            $b1 = new Bolsista();
+            $b1->setMatr(1112);
+            $b1->setNome("Jubileu");
+            $b1->setSexo("M");
+            $b1->setBolsa(12.5);
+            $b1->setCurso("Administração");
+            $b1->setIdade(18);
+            $b1->pagarMensalidade();
+            print_r($b1);
         ?>
 </body>
 </pre>

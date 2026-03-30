@@ -91,13 +91,13 @@
             print_r($p4);
             */
             // require_once "herancaAvancado/pessoa.php";
-            require_once "herancaAvancado/aluno.php";
-            require_once "herancaAvancado/bolsista.php";
+            // require_once "herancaAvancado/aluno.php";
+            // require_once "herancaAvancado/bolsista.php";
             // $v1 = new Visitante();
             // $v1->setNome("Osvaldo");
             // $v1->setIdade(29);
             // $v1->setSexo("M");
-            $a1 = new Aluno();
+            /*$a1 = new Aluno();
             $a1->setNome("Pedro");
             $a1->setMatr(1111);
             $a1->setIdade(16);
@@ -114,7 +114,19 @@
             $b1->setCurso("Administração");
             $b1->setIdade(18);
             $b1->pagarMensalidade();
-            print_r($b1);
+            print_r($b1);*/
+            require_once 'polimorfismo/mamifero.php';
+            require_once 'polimorfismo/reptil.php';
+            require_once 'polimorfismo/peixe.php';
+            require_once 'polimorfismo/ave.php';
+
+            $m = new Mamifero();
+            $a = new Ave();
+            $r = new Reptil();
+            $m->setPeso(33.5);
+            $m->locomover();
+            $a->locomover();
+            $r->locomover();
         ?>
 </body>
 </pre>

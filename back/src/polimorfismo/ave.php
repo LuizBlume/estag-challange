@@ -8,11 +8,11 @@ class Ave extends Animal {
     public function emitirSom() {
         echo "<p>Sons de ave</p>";
     }
-    public function locoomover() {
+    public function locomover() {
         echo "<p>Voando</p>";
     }
     public function fazerNinho() {
-            echo "<p>Construindo um ninho!</p>"
+        echo "<p>Construindo um ninho!</p>";
     }
     function getcorPena() {
         return $this->corPena;

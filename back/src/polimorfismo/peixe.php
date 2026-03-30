@@ -8,7 +8,7 @@ class Peixe extends Animal {
     public function emitirSom() {
         echo "<p>Peixe não faz asom</p>";
     }
-    public function locoomover() {
+    public function locomover() {
         echo "<p>Nadando</p>";
     }
     public function soltarBolha() {
